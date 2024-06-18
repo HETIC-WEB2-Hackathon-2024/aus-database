@@ -34,6 +34,15 @@ jobs:
     secrets:
       ssh_key: ${{ secrets.SSH_KEY }}
       ssh_user: ${{ secrets.SSH_USER }}
+  setup-postgres-cyan:
+    if: github.event.inputs.database == 'postgres-cyan'
+    uses: ./.github/workflows/start-postgres.yml
+    with:
+      color: 'cyan'
+      host: cyan.aus.floless.fr
+    secrets:
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
   setup-postgres-marron:
     if: github.event.inputs.database == 'postgres-marron'
     uses: ./.github/workflows/start-postgres.yml
