@@ -8,6 +8,7 @@ on:
         type: 'choice'
         options:
           - 'postgres-bleu'
+          - 'postgres-cyan'
           - 'postgres-marron'
           - 'postgres-or'
           - 'postgres-orange'
