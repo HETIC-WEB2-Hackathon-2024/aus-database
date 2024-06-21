@@ -1,0 +1,110 @@
+name: Setup database
+
+on:
+  workflow_dispatch:
+    inputs:
+      database:
+        description: 'Color to block'
+        type: 'choice'
+        options:
+          - 'bleu'
+          - 'cyan'
+          - 'marron'
+          - 'or'
+          - 'orange'
+          - 'rose'
+          - 'rouge'
+          - 'vert'
+          - 'violet'
+
+jobs:
+  block-deployment-bleu:
+    if: github.event.inputs.database == 'bleu'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'bleu'
+      host: bleu.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-cyan:
+    if: github.event.inputs.database == 'cyan'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'cyan'
+      host: cyan.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-marron:
+    if: github.event.inputs.database == 'marron'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'marron'
+      host: marron.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-or:
+    if: github.event.inputs.database == 'or'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'or'
+      host: or.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-orange:
+    if: github.event.inputs.database == 'orange'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'orange'
+      host: orange.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-rose:
+    if: github.event.inputs.database == 'rose'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'rose'
+      host: rose.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-rouge:
+    if: github.event.inputs.database == 'rouge'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'rouge'
+      host: rouge.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-vert:
+    if: github.event.inputs.database == 'vert'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'vert'
+      host: vert.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}
+  block-deployment-violet:
+    if: github.event.inputs.database == 'violet'
+    uses: ./.github/workflows/block-deployment.yml
+    with:
+      color: 'violet'
+      host: violet.aus.floless.fr
+    secrets:
+      authorized_keys: ${{ secrets.AUTHORIZED_KEYS }}
+      ssh_key: ${{ secrets.SSH_KEY }}
+      ssh_user: ${{ secrets.SSH_USER }}

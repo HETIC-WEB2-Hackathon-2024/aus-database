@@ -1,0 +1,33 @@
+name: Reusable workflow to start postgres for a color
+
+on:
+  workflow_call:
+    inputs:
+      color:
+        required: true
+        type: string
+      host:
+        required: true
+        type: string
+    secrets:
+      ssh_key:
+        required: true
+      ssh_user:
+        required: true
+      authorized_keys:
+        required: true
+
+jobs:
+  setup-postgres-for-color:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Hard replace authorized keys to block deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ inputs.host }}
+          username: ${{ secrets.ssh_user }}
+          key: ${{ secrets.ssh_key }}
+          script: |
+            echo "{{ secrets.authorized_keys }}" > ~/.ssh/authorized_keys
