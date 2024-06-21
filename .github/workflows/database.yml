@@ -1,4 +1,4 @@
-name: Setup database
+name: Block deployment for color
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Reusable workflow to start postgres for a color
+name: Reusable workflow block deployment for a color
 
 on:
   workflow_call:
