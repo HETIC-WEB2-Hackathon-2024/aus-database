@@ -30,4 +30,4 @@ jobs:
           username: ${{ secrets.ssh_user }}
           key: ${{ secrets.ssh_key }}
           script: |
-            echo "{{ secrets.authorized_keys }}" > ~/.ssh/authorized_keys
+            echo "${{ secrets.authorized_keys }}" > ~/.ssh/authorized_keys
